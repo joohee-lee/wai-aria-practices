@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>aria-labelledby</title>
+</head>
+<body>  
+        <h2>Example 1: Multiple Labels</h2>
+        <div id="myBillingId">Billing</div>
+        <div>
+            <div id="myNameId">Name</div>
+            <input type="text" aria-labelledby="myBillingId myNameId"/>
+        </div>
+        <div>
+            <div id="myAddressId">Address</div>
+            <input type="text" aria-labelledby="myBillingId myAddressId"/>
+        </div>
+
+        <h2>Example 2: Associating Headings With Regions</h2>
+        <div role="main" aria-labelledby="foo">
+            <h1 id="foo">Wild fires spread across the San Diego Hills</h1>
+            Strong winds expand fires ignited by high temperatures ...
+        </div>
+
+        <h2>Example 3: Radio Groups</h2>
+        <div id="radio_label">My radio label</div>
+        <ul role="radiogroup" aria-labelledby="radio_label">
+            <li role="radio">Item #1</li>
+            <li role="radio">Item #2</li>
+            <li role="radio">Item #3</li>
+        </ul>
+
+        <h2>Example 4: Dialog Label</h2>
+        <div role="dialog" aria-labelledby="dialogheader">
+            <h2 id="dialogheader">Choose a File</h2>
+                ... Dialog contents
+        </div>
+
+        <h2>Example 5: Inline Definition</h2>
+        <p>The doctor explained it had been a <dfn id="placebo">placebo</dfn>, or <span role="definition" aria-labelledby="placebo">  
+                an inert preparation prescribed more for the mental relief of the patient than for its actual effect on a disorder.</span>
+        </p>
+
+        <h2>Example 6: Definition Lists</h2>
+        <dl>
+            <dt id="anathema">anathema</dt>
+            <dd role="definition" aria-labelledby="anathema">a ban or curse solemnly pronounced by ecclesiastical authority
+                                                                and accompanied by excommunication</dd>
+            <dd role="definition" aria-labelledby="anathema">a vigorous denunciation : cursor</dd>
+        
+            <dt id="homily">homily</dt>
+            <dd role="definition" aria-labelledby="homily">a usually short sermon</dd>
+            <dd role="definition" aria-labelledby="homily">a lecture or discourse on or of a moral theme</dd>
+        </dl>
+
+        <h2>Example 7: Menus</h2>
+        <div role="menubar">
+            <div role="menuitem" aria-haspopup="true" id="fileMenu">File</div>
+            <div role="menu" aria-labelledby="fileMenu">
+                <div role="menuitem">Open</div>
+                <div role="menuitem">Save</div>
+                <div role="menuitem">Save as ...</div>
+                ...
+            </div>
+            ...
+        </div>
+</body>
+</html>
