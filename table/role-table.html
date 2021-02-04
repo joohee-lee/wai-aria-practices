@@ -73,7 +73,7 @@
   </style>
 </head>
 <body>
-  <h3 class="h-tbale">테이블 제목</h3>
+  <h3 class="h-tbale">테이블 제목 // table</h3>
   <div class="tblae-caption visually-hidden" id="caption">테이블 관련 설명</div>
   <div class="table" role="table" aria-describedby="caption">
 
@@ -122,6 +122,55 @@
       </div>  
     </div>
   </div>
+
+<h3>테이블 제목 // grid</h3>
+<div class="table" role="grid" aria-describedby="caption">
+
+  <div class="row" role="row">
+    <span class="th" role="columnheader" aria-colindex="2">
+      <span class="text">상품명1</span>
+    </span>
+    <span class="th" role="columnheader" aria-colindex="3">
+      <span class="text">상품명2</span>
+    </span>
+  </div>
+
+  <div class="row"  role="rowgroup">
+    <div role="row">
+      <div class="th-tit" role="rowheader" aria-rowspan="2">제조사</div>
+    </div>
+    <div role="row">
+      <div class="td-cont">
+        <span class="cell" role="gridcell" aria-colindex="2">apple</span>
+        <span class="cell" role="gridcell" aria-colindex="3">samsung</span>
+      </div>
+    </div>  
+ </div>
+
+  <div class="row" role="rowgroup">
+    <div role="row">
+      <div class="th-tit" role="rowheader" aria-rowspan="2">출시일자</div>
+    </div>
+    <div role="row">
+      <div class="td-cont">
+        <span class="cell" role="gridcell" aria-colindex="2">2020.11.30</span>
+        <span class="cell" role="gridcell" aria-colindex="3">2020.09.20</span>
+      </div>
+    </div>  
+  </div>
+
+  <div class="row" role="rowgroup">
+    <div role="row">
+      <div class="th-tit" role="rowheader" aria-rowspan="2">유심</div>
+    </div>
+    <div role="row">
+      <div class="td-cont">
+        <span class="cell" role="gridcell" aria-colindex="2">나노유심</span>
+        <span class="cell" role="gridcell" aria-colindex="3">나노유심</span>
+      </div>
+    </div>  
+  </div>
+</div>
 
   <h3 class="h-tbale">테이블 제목 2 - cell</h3>
   <div class="tblae-caption visually-hidden" id="caption">테이블 관련 설명</div>
