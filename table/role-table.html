@@ -13,6 +13,10 @@
       padding: 0 10px;
     }
 
+    h3{
+      margin-top: 10px;
+    }
+
     .visually-hidden {
       position: absolute;
       left: -10000px;
@@ -35,8 +39,8 @@
     
     .table .row,
     .table .td-cont {
-      width: 100%;
       display: flex;
+      width: 100%;
     }
 
     .table .th,
@@ -49,12 +53,11 @@
 
     .table .th-tit {
       font-size: 14px;
-      height: 24px;
-      line-height: 24px;
+      line-height: 1;
       background-color: #e1e3e4;
       border-top: 1px solid #ddd;
       border-bottom: 1px solid #ddd;
-      padding-left: 10px;
+      padding: 10px;
     }
 
     .table .td-cont .cell {
@@ -70,14 +73,20 @@
       bottom: 10px;
     }
 
+    .flex-row{
+      flex-direction: row;
+    }
+    .flex-column{
+      flex-direction: column;
+    }
   </style>
 </head>
 <body>
-  <h3 class="h-tbale">테이블 제목 // table</h3>
+  <h3 class="h-tbale">테이블 : role=table</h3>
   <div class="tblae-caption visually-hidden" id="caption">테이블 관련 설명</div>
   <div class="table" role="table" aria-describedby="caption">
 
-    <div class="row" role="row">
+    <div class="row flex-row" role="row">
       <span class="th" role="columnheader" aria-colindex="2">
         <span class="text">상품명1</span>
       </span>
@@ -85,8 +94,8 @@
         <span class="text">상품명2</span>
       </span>
     </div>
-
-    <div class="row"  role="rowgroup">
+  
+    <div class="row flex-column"  role="rowgroup">
       <div role="row">
         <div class="th-tit" role="rowheader" aria-rowspan="2">제조사</div>
       </div>
@@ -97,8 +106,8 @@
         </div>
       </div>  
    </div>
-
-    <div class="row" role="rowgroup">
+  
+    <div class="row flex-column" role="rowgroup">
       <div role="row">
         <div class="th-tit" role="rowheader" aria-rowspan="2">출시일자</div>
       </div>
@@ -109,8 +118,8 @@
         </div>
       </div>  
     </div>
-
-    <div class="row" role="rowgroup">
+  
+    <div class="row flex-column" role="rowgroup">
       <div role="row">
         <div class="th-tit" role="rowheader" aria-rowspan="2">유심</div>
       </div>
@@ -123,10 +132,10 @@
     </div>
   </div>
 
-<h3>테이블 제목 // grid</h3>
-<div class="table" role="grid" aria-describedby="caption">
+<h3 id="grid-table">테이블 : role=grid</h3>
+<div class="table" role="grid" aria-describedby="grid-table">
 
-  <div class="row" role="row">
+  <div class="row flex-row" role="row">
     <span class="th" role="columnheader" aria-colindex="2">
       <span class="text">상품명1</span>
     </span>
@@ -135,7 +144,7 @@
     </span>
   </div>
 
-  <div class="row"  role="rowgroup">
+  <div class="row flex-column"  role="rowgroup">
     <div role="row">
       <div class="th-tit" role="rowheader" aria-rowspan="2">제조사</div>
     </div>
@@ -147,7 +156,7 @@
     </div>  
  </div>
 
-  <div class="row" role="rowgroup">
+  <div class="row flex-column" role="rowgroup">
     <div role="row">
       <div class="th-tit" role="rowheader" aria-rowspan="2">출시일자</div>
     </div>
@@ -159,7 +168,7 @@
     </div>  
   </div>
 
-  <div class="row" role="rowgroup">
+  <div class="row flex-column" role="rowgroup">
     <div role="row">
       <div class="th-tit" role="rowheader" aria-rowspan="2">유심</div>
     </div>
@@ -172,11 +181,12 @@
   </div>
 </div>
 
-  <h3 class="h-tbale">테이블 제목 2 - cell</h3>
+  <!--
+  <h3 class="h-tbale">테이블 // table, row, columnheader, rowgroup, cell : 잘못 읽힘. </h3>
   <div class="tblae-caption visually-hidden" id="caption">테이블 관련 설명</div>
   <div class="table" role="table" aria-describedby="caption" style="border:0;">
 
-    <div class="row" role="row">
+    <div class="row flex-row" role="row">
       <span class="th" role="columnheader">
         <span class="text">상품명1</span>
       </span>
@@ -185,8 +195,8 @@
       </span>
     </div>
 
-    <div class="row" style="flex-direction: column;" role="rowgroup">
-     <div role="row"> 
+    <div class="row" role="rowgroup">
+     <div role="row flex-column"> 
         <div class="th-tit" role="rowheader">제조사</div>
         <div class="td-cont">
           <span class="cell" role="cell">apple</span>
@@ -195,7 +205,7 @@
       </div>
     </div>
 
-    <div class="row" style="flex-direction: column;" role="rowgroup">
+    <div class="row flex-column" role="rowgroup">
       <div class="th-tit" role="rowheader">출시일자</div>
       <div class="td-cont">
         <span class="cell" role="cell">2020.11.30</span>
@@ -203,7 +213,7 @@
       </div>
     </div>
 
-    <div class="row" style="flex-direction: column;" role="rowgroup">
+    <div class="row flex-column" role="rowgroup">
       <div class="th-tit" role="rowheader">유심</div>
       <div class="td-cont">
         <span class="cell" role="cell">나노유심</span>
@@ -211,7 +221,7 @@
       </div>
     </div>
 
-    <div class="row" style="flex-direction: column;" role="rowgroup">
+    <div class="row flex-column" role="rowgroup">
       <div class="th-tit" role="rowheader">네트워크</div>
       <div class="td-cont">
         <span class="cell" role="cell">4G LTE</span>
@@ -221,6 +231,7 @@
 
   </div>
 
+ <h3># table</h3>
   <table border="1" style="width: 100%;">
     <tr>
       <th scope="col">상품명1</th>
@@ -241,6 +252,6 @@
       <td>내용 2</td>
     </tr>
   </table>
-  
+  -->
 </body>
 </html>
