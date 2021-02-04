@@ -31,5 +31,29 @@
      …
     </div>
   </div>
+
+  <h2>grid, rowgroup, row, columnheader, aria-colindex</h2>
+  <div role="grid" aria-colcount="16">
+    <div role="rowgroup">
+      <div role="row">
+        <span role="columnheader" aria-colindex="2">First Name</span>
+        <span role="columnheader" aria-colindex="3">Last Name</span>
+        <span role="columnheader" aria-colindex="4">Company</span>
+        <span role="columnheader" aria-colindex="5">Address</span>
+      </div>
+    </div>
+    <div role="rowgroup">
+      <div role="row">
+        <span role="gridcell" aria-colindex="2">Fred</span>
+        <span role="gridcell" aria-colindex="3">Jackson</span>
+        <span role="gridcell" aria-colindex="4" aria-rowspan="2">Acme, Inc.</span>
+        <span role="gridcell" aria-colindex="5" aria-rowspan="2">123 Broad St.</span>
+      </div>
+      <div role="row">
+        <span role="gridcell" aria-colindex="2">Sara</span>
+        <span role="gridcell" aria-colindex="3">James</span>
+      </div>
+\    </div>
+  </div>
 </body>
 </html>
