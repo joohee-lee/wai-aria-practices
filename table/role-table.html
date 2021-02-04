@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>role-table</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    body { font-size: 100%; font-family: sans-serif;}
+
+    .visually-hidden {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .h-table { 
+      font-size: 14px; 
+      font-weight: bold;
+    }
+
+    .table {
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+    
+    .table .row,
+    .table .td-cont {
+      width: 100%;
+      display: flex;
+    }
+
+    .table .th,
+    .table .td-cont .cell {
+      width: 50%;
+      padding: 10px;
+      text-align: center;
+      align-self: center;
+    }
+
+
+    .table .th-tit,
+    .table .td-cont{
+      width: 100%;
+    }
+
+    .table .th-tit {
+      font-size: 14px;
+      height: 24px;
+      line-height: 24px;
+      background-color: #e1e3e4;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding-left: 10px;
+    }
+
+    .table .td-cont .cell {
+      position: relative;
+      padding: 13px 0;
+    }
+    .table .td-cont .cell:last-child:after{
+      content: " ";
+      display: block;
+      border-left: 1px solid #ddd;
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <h3 class="h-tbale">테이블 제목</h3>
+  <div class="tblae-caption visually-hidden" id="caption">테이블 관련 설명</div>
+  <div class="table" role="table" aria-describedby="caption">
+
+    <div class="row" role="row">
+      <span class="th" role="columnheader">
+        <span class="text">상품명1</span>
+      </span>
+      <span class="th" role="columnheader">
+        <span class="text">상품명2</span>
+      </span>
+    </div>
+
+    <div class="row" style="flex-direction: column;">
+      <div class="th-tit" role="rowheader">제조사</div>
+      <div class="td-cont">
+        <span class="cell" role="gridcell">apple</span>
+        <span class="cell" role="gridcell">samsung</span>
+      </div>
+    </div>
+
+    <div class="row" style="flex-direction: column;">
+      <div class="th-tit" role="rowheader">출시일자</div>
+      <div class="td-cont">
+        <span class="cell" role="gridcell">2020.11.30</span>
+        <span class="cell" role="gridcell">2020.09.20</span>
+      </div>
+    </div>
+
+    <div class="row" style="flex-direction: column;">
+      <div class="th-tit" role="rowheader">유심</div>
+      <div class="td-cont">
+        <span class="cell" role="gridcell">나노유심</span>
+        <span class="cell" role="gridcell">나노유심</span>
+      </div>
+    </div>
+
+    <div class="row" style="flex-direction: column;">
+      <div class="th-tit" role="rowheader">네트워크</div>
+      <div class="td-cont">
+        <span class="cell" role="gridcell">4G LTE</span>
+        <span class="cell" role="gridcell">5G</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
