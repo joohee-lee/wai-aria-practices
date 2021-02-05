@@ -16,7 +16,7 @@ https://www.w3.org/WAI/tutorials/menus/structure/
 - button
 - checkbox
 - gridcell
-- lknk
+- link
 - menuitem
 - menuitemcheckbox
 - menuitemradio
