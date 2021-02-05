@@ -94,7 +94,7 @@ https://www.w3.org/WAI/tutorials/menus/structure/
 - alertdialog 
 - dialog
 
-# Statrs and properties 
+# States and properties 
 ## Widget attributes
 - aria-autocomplete
 - aria-checked
