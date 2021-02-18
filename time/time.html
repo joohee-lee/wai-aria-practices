@@ -29,16 +29,74 @@
     .box {margin-top: 10px;}
     .box h4 {margin-top: 5px;}
     ul {margin-left: 10px;}
+
+    table {
+      border: 0;
+      border-collapse: collapse;
+      border-bottom: 1px solid #ddd;
+      margin: 5px 0 20px;
+      width: 100%;
+    }
+
+    table th, table td{
+      padding: 10px;
+    }
+
+    table th{
+      text-align: left;
+      background: #f2f2f2;
+      width: 20%;
+      border-top: 1px solid #ddd;
+    }
+
+    table td{
+      vertical-align:middle;
+      border-top: 1px solid #ddd;
+    }
   </style>
 </head>
 <body>
   <h3>role = time</h3>
   <div class="box" tabindex="0">
     <h4>Native element</h4>
-    <time datetime="2021-02-11">2021년 2월 11일</time>
+    <time datetime="2021-02-11">2021년 2월 11일</time> 
+    
+    <table>
+      <tr>
+        <th>IOS 14 : 음성 출력 </th>
+        <td>이천이십일년 이월 십일일 / 이천이십일년 이월 십일일</td> 
+      </tr>
+      <tr>
+        <th>AOS : 음성 출력 </th>
+        <td></td> 
+      </tr>
+    </table>
 
     <h4>Wai-aria role="time"</h4>
     <span role="time">2020-02-11</span>
+
+    <table>
+      <tr>
+        <th>IOS 14 : 음성 출력 </th>
+        <td>이천이십 이 십일</td> 
+      </tr>
+      <tr>
+        <th>AOS : 음성 출력 </th>
+        <td></td> 
+      </tr>
+    </table>
+
+    <span role="time">08:00</span>
+    <table>
+      <tr>
+        <th>IOS 14 : 음성 출력 </th>
+        <td></td> 
+      </tr>
+      <tr>
+        <th>AOS : 음성 출력 </th>
+        <td></td> 
+      </tr>
+    </table>
   </div>
   <div class="box">
     <ul>
