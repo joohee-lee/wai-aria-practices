@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>role-table</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body { font-size: 100%; font-family: sans-serif;}
+    html, body{
+      width: 100%;
+      height: 100%;
+      padding: 0 10px;
+    }
+
+    h3{
+      margin-top: 10px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .box {margin-top: 10px;}
+    .box h4 {margin-top: 5px;}
+    ul {margin-left: 10px;}
+  </style>
+</head>
+<body>
+  <h3>role = tiem</h3>
+  <div class="box">
+    <h4>Native element</h4>
+    <time datetime="2021-02-11">2021년 2월 11일</time>
+
+    <h4>Wai-aria role="time"</h4>
+    <span role="time">2020-02-11</span>
+  </div>
+  <div class="box">
+    <ul>
+      <li> A valid month string: <code>&lt;span role="time"&gt;2019-11&lt;/span&gt;</code>
+      </li>
+      <li> A valid date string: <code>&lt;span role="time"&gt;2019-11-18&lt;/span&gt;</code>
+      </li>
+      <li> A valid yearless date string: <code>&lt;span role="time"&gt;11-18&lt;/span&gt;</code>
+      </li>
+      <li> A valid time string: <code>&lt;span role="time"&gt;09:54:39&lt;/span&gt;</code>
+      </li>
+      <li> A valid floating date and time string: <code>&lt;span role="time"&gt;2019-11-18T14:54&lt;/span&gt;</code>
+      </li>
+      <li> A valid time-zone offset string: <code>&lt;span role="time"&gt;-08:00&lt;/span&gt;</code>
+      </li>
+      <li> A valid global date and time string: <code>&lt;span role="time"&gt;2019-11-18T14:54Z&lt;/span&gt;</code>
+      </li>
+      <li> A valid week string: <code>&lt;span role="time"&gt;2019-W47&lt;/span&gt;</code>
+      </li>
+å						<li> Four or more ASCII digits, at least one of which is not U+0030 DIGIT ZERO (0): <code>&lt;span role="time"&gt;0001&lt;/span&gt;</code>
+      </li>
+      <li> A valid duration string: <code>&lt;span role="time"&gt;4h 18m 3s&lt;/span&gt;</code>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
