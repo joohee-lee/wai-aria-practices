@@ -1,0 +1,188 @@
+/* to CommbotStyles
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  word-break: keep-all;
+  box-sizing: border-box;
+  line-height: normal;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow: hidden;
+  -webkit-text-size-adjust: none;
+  // -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+*/
+
+// body, // to CommbotStyles
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+textarea,
+p,
+blockquote,
+table,
+th,
+td,
+input,
+select,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+// body, // to CommbotStyles
+input,
+textarea,
+select,
+button,
+table {
+  font-family: $system-font-family;
+  font-size: 16px;
+  line-height: 23px;
+  color: $fc-default;
+  font-weight: $fw-light
+}
+
+em {
+  font-style: normal;
+}
+
+fieldset,
+img {
+  border: 0 none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+dl,
+ul,
+ol,
+menu,
+li {
+  list-style: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  border: 0 none;
+  border-radius: 0;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  user-select: none;
+
+  @include hover-focus-active {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $fw-normal;
+}
+
+input,
+select,
+textarea,
+button {
+  vertical-align: middle;
+  border: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+label {
+  vertical-align: middle;
+}
+
+textarea {
+  width: 100%;
+  border: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="search"],
+input[type="file"],
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  appearance: none !important;
+}
+
+table {
+  border: 0 none;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+caption,
+legend {
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999em;
+}

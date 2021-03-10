@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/contents.css">
+</head>
+<body>
+  <h1>a element</h1>
+  <h2>Rules of ARIA attribute usage by HTML feature</h2>
+  <table class="simple">
+    <colgroup>
+      <col style="width: 10%;">
+      <col style="width: 45%;">
+      <col style="width: 45%;">
+    </colgroup>
+    <caption>
+      Rules of <abbr title="Accessible Rich Internet Applications">ARIA</abbr> attribute usage by HTML feature
+    </caption>
+    <tbody><tr>
+      <th>
+        HTML feature
+      </th>
+      <th>
+        <p id="implicit">
+          Implicit <abbr title="Accessible Rich Internet Applications">ARIA</abbr> semantics
+          <small>(explicitly assigning these in markup is <em class="rfc2119">NOT RECOMMENDED</em>) 권장하지 않음.</small>
+        </p>
+      </th>
+      <th>
+        <abbr title="Accessible Rich Internet Applications">ARIA</abbr> roles, states and properties which <em class="rfc2119">MAY</em> be used (사용)
+      </th>
+    </tr>
+    </tbody><tbody>
+      <tr id="el-a" tabindex="-1">
+        <td>
+          <code><a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">a</a></code> with <a href="https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href"><code>href</code></a>
+        </td>
+        <td>
+          <code>role=<a href="#index-aria-link">link</a></code>
+        </td>
+        <td>
+          <p>
+            Roles:
+            <a href="#index-aria-button"><code>button</code></a>,
+            <a href="#index-aria-checkbox"><code>checkbox</code></a>,
+            <a href="#index-aria-menuitem"><code>menuitem</code></a>,
+            <a href="#index-aria-menuitemcheckbox"><code>menuitemcheckbox</code></a>,
+            <a href="#index-aria-menuitemradio"><code>menuitemradio</code></a>,
+            <a href="#index-aria-option"><code>option</code></a>,
+            <a href="#index-aria-radio"><code>radio</code></a>,
+            <a href="#index-aria-switch"><code>switch</code></a>,
+            <a href="#index-aria-tab"><code>tab</code></a>
+            or <a href="#index-aria-treeitem"><code>treeitem</code></a>
+          </p>
+          <p>
+            DPub Roles:
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-backlink"><code>doc-backlink</code></a>,
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-biblioref"><code>doc-biblioref</code></a>,
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-glossref"><code>doc-glossref</code></a>,
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-noteref"><code>doc-noteref</code></a>
+          </p>
+          <p>
+            <a href="#index-aria-global">Global <code>aria-*</code> attributes</a> and
+            any <code>aria-*</code> attributes applicable to the allowed roles and
+            implied role (if any).
+          </p>
+        </td>
+      </tr>
+      <tr id="el-a-no-href" tabindex="-1">
+        <td>
+          <code><a data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">a</a></code> without <a href="https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href"><code>href</code></a>
+        </td>
+        <td>
+          <a href="#dfn-no-corresponding-role" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-no-corresponding-role-1">No corresponding role</a>
+        </td>
+        <td>
+          <p>
+            <a href="#dfn-any-role" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-any-role-1"><strong>Any</strong> <code>role</code></a>
+          </p>
+          <p>
+            <a href="#index-aria-global">Global <code>aria-*</code> attributes</a> and
+            any <code>aria-*</code> attributes applicable to the allowed roles and
+            implied role (if any).
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Test</h2>
+  <div class="code">
+    <code>
+        &lt a href="#">naver&lt/a&gt
+    </code>
+  </div>
+  <table class="simple">
+    <caption></caption>
+    <tbody><tr>
+      <th>
+        AOS
+      </th>
+      <th>
+        IOS
+      </th>
+    </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td>naver 링크 / 초점 O</td>
+        <td>naver 링크 / 초점 O</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="code">
+    <code>
+        # without href (href 배제하고 개발한 케이스)<br>
+        &lt a data-link="http://naver.com" >naver&lt/a&gt
+    </code>
+  </div>
+  <table class="simple">
+    <caption></caption>
+    <tbody><tr>
+      <th>
+        AOS
+      </th>
+      <th>
+        IOS
+      </th>
+    </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td>naver 링크 / 초점 X</td>
+        <td>naver 링크 / 초점 O</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="code">
+    <code>
+        # without href (href 배제하고 개발한 케이스) <br>
+        초점문제 발생. role 정의 필요. <br><br>
+
+        &lt a data-link="http://naver.com" role="link" tabindex="0">naver&lt/a&gt<br>
+        &lt a data-link="http://naver.com" role="button" tabindex="0">naver&lt/a&gt
+    </code>
+  </div>
+  <table class="simple">
+    <caption></caption>
+    <tbody><tr>
+      <th>
+        AOS
+      </th>
+      <th>
+        IOS
+      </th>
+    </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td>naver 링크 / 초점 O</td>
+        <td>naver 링크 / 초점 O</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
