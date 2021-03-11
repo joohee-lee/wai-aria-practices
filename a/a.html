@@ -9,6 +9,10 @@
 </head>
 <body>
   <h1>a element // role=link</h1>
+  <div>
+    - native element <br>
+    - role="link" <br>
+ </div>
   <h2>Rules of ARIA attribute usage by HTML feature</h2>
   <table class="simple">
     <colgroup>
@@ -91,7 +95,10 @@
   </table>
   <h2>Test</h2>
   <p>
-    <a href="http://www.naver.com">naver</a>
+    1. native <a href="http://www.naver.com">naver</a> <br>
+    2. aria-label / text <a href="http://www.naver.com" aria-label="naver">naver</a> <br>
+    3. aria-label only  <a href="http://www.naver.com" aria-label="naver"></a> 
+    
   </p>
   <div class="code">
     <code>
@@ -101,6 +108,7 @@
   <table class="simple">
     <caption></caption>
     <tbody><tr>
+      <th>구분</th>
       <th>
         AOS
       </th>
@@ -111,6 +119,17 @@
     </tbody>
     <tbody>
       <tr>
+        <th>native</th>
+        <td>naver 링크 / 초점 O</td>
+        <td>naver 링크 / 초점 O</td>
+      </tr>
+      <tr>
+        <th>native, aria-label, 텍스트 노출 </th>
+        <td>naver 링크 / 초점 O</td>
+        <td>naver 링크 / 초점 O</td>
+      </tr>
+      <tr>
+        <th>native, aria-label</th>
         <td>naver 링크 / 초점 O</td>
         <td>naver 링크 / 초점 O</td>
       </tr>
@@ -174,5 +193,6 @@
       </tr>
     </tbody>
   </table>
+
 </body>
 </html>
