@@ -98,16 +98,19 @@
     1. native <a href="http://www.naver.com">naver</a> <br>
     2. aria-label / text <a href="http://www.naver.com" aria-label="naver">naver</a> <br>
     3. aria-label only  <a href="http://www.naver.com" aria-label="naver" style="display: block;background: yellow; width: 10px; height: 10px;"></a> 
-    4. h1 / a  <br>
+    4. h1 / a (block: x) <br>
     <h1 style="background: blue; width: 60px; height: 10px;"><a href="naver.com" aria-label="naver"></a></h1>
+    5. h1 / a (block: o) <br>
+    <h1><a href="naver.com" aria-label="naver" tyle="display:block; background: blue; width: 60px; height: 10px;"></a></h1>
 
     
   </p>
   <div class="code">
     <code>
-       1.  &lt a href="http://www.naver.com">naver&lt/a&gt <br>
-       2.  &lt a href="http://www.naver.com"  aria-label="naver">naver&lt/a&gt  <br>
-       3.  &lt a href="http://www.naver.com" aria-label="naver" style="display: block;background: yellow; width: 10px; height: 10px;">naver&lt/a&gt <br>
+       1.  &lt a href="http://www.naver.com">naver&lt/a&gt <br><br>
+       2.  &lt a href="http://www.naver.com"  aria-label="naver">naver&lt/a&gt  <br><br>
+       3.  &lt a href="http://www.naver.com" aria-label="naver" style="display: block;background: yellow; width: 10px; height: 10px;">naver&lt/a&gt <br><br>
+       4.  &lt h1 style="background: blue; width: 60px; height: 10px;">&lta href="naver.com" aria-label="naver">&lt/a>&lt/h1&gt
     </code>
   </div>
   <table class="simple">
@@ -124,19 +127,24 @@
     </tbody>
     <tbody>
       <tr>
-        <th>native</th>
+        <th scope="row">1. native</th>
         <td>naver 링크 / 초점 O</td>
         <td>naver 링크 / 초점 O</td>
       </tr>
       <tr>
-        <th>native, aria-label(텍스트 읽어줌), 텍스트 노출 : 중복으로 마크업을 해도 aria-lable 만 읽어줌. </th>
+        <th scope="row">2. native, aria-label(텍스트 읽어줌), <br> 텍스트 노출 : 중복으로 마크업을 해도 aria-lable 만 읽어줌. </th>
         <td>naver 링크 / 초점 O</td>
         <td>naver 링크 / 초점 O</td>
       </tr>
       <tr>
-        <th>native, aria-label</th>
+        <th scope="row">3. native, aria-label</th>
         <td>naver 링크 / 초점 O</td>
         <td>naver 링크 / 초점 O</td>
+      </tr>
+      <tr>
+        <th scope="row">4. h1, a native, aria-label</th>
+        <td>naver 링크 읽지 않음 / 초점 x </td>
+        <td>naver 링크 읽지 않음 / 초점 x </td>
       </tr>
     </tbody>
   </table>
